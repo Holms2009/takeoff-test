@@ -2,10 +2,17 @@ import block from "bem-cn";
 
 import './Button.scss';
 
-function Button() {
-  return (
-    <button>
+let b = block('Button');
 
+type Props = {
+  text: string;
+  type?: 'button' | 'submit';
+}
+
+function Button({ text, type = "button" }: Props) {
+  return (
+    <button className={b()} type={type}>
+      {text}
     </button>
   )
 }

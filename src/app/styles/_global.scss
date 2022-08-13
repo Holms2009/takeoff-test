@@ -1,0 +1,13 @@
+@import './variables';
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-size  : 20px;
+  font-weight: 400;
+  color      : $dark_blue;
+}
+
+.center {
+  margin   : 0 auto;
+  max-width: 1500px;
+}

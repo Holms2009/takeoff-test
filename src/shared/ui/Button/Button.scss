@@ -1,0 +1,15 @@
+@import '../../../app/styles/variables';
+
+.Button {
+  padding         : 15px 30px;
+  font-size       : 22px;
+  color           : $white;
+  background-color: $blue;
+  border          : none;
+  transition      : all 0.3s ease;
+  cursor          : pointer;
+
+  &:hover {
+    background-color: $blue2;
+  }
+}

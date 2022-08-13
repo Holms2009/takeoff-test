@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import auth from '../../features/AuthForm/config/AuthForm.slice';
+
 export const store = configureStore({
   reducer: {
-    // contacts: contactsReduser
+    auth,
   }
 })
 

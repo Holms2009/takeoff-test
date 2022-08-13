@@ -1,0 +1,26 @@
+@import '../../app/styles/variables';
+
+.LoginPage {
+  height         : 100vh;
+  background     : url('../../assets/img/login-page-bg.png') no-repeat 50% 50%;
+  background-size: cover;
+  display        : flex;
+  align-items    : center;
+
+  &__wrapper {
+    width : 30%;
+    margin: 0 auto;
+
+    @media screen and (max-width: $d1) {
+      width: 40%;
+    }
+
+    @media screen and (max-width: $d3) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: $t) {
+      width: 80%;
+    }
+  }
+}
