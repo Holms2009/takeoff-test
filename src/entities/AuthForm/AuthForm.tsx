@@ -5,7 +5,7 @@ import './AuthForm.scss';
 import { Button, Input } from "../../shared/ui";
 import { fetchAuthDataThunk } from "./api/asyncActions";
 import { useAppDispatch } from "../../shared/store/hooks";
-import { setIsAuth } from "./config/AuthForm.slice";
+import { setIsAuth } from "../../shared/store/slices/AuthForm";
 
 let b = block('AuthForm');
 
@@ -25,6 +25,7 @@ function AuthForm() {
         if (authData[0].email === loginData.email && authData[0].password === loginData.password) {
           dispatch(setIsAuth(true));
           setAuthError('');
+          sessionStorage.testIsAuth = 'isAuth';
         } else {
           setAuthError('Wrong email or password!')
         }

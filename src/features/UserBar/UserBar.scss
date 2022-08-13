@@ -1,0 +1,42 @@
+@import '../../app/styles/variables';
+
+.UserBar {
+  padding         : 30px;
+  background-color: $white;
+  border-radius   : 15px;
+  text-align      : center;
+
+  &__title {
+    font-size  : 50px;
+    font-weight: 600;
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-size : 25px;
+  }
+
+  &__buttons {
+    margin-top     : 30px;
+    display        : flex;
+    justify-content: center;
+    gap            : 30px;
+  }
+
+  &__link {
+    display        : inline-block;
+    padding        : 15px 30px;
+    font-size      : 22px;
+    font-weight    : 500;
+    text-decoration: none;
+    color          : $blue;
+    border         : 2px solid $blue;
+    transition     : all 0.3s ease;
+
+    &:hover {
+      color           : $white;
+      border-color    : $blue2;
+      background-color: $blue2;
+    }
+  }
+}

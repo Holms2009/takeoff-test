@@ -1,18 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../../../shared/store/store";
+import { RootState } from "../store";
 
-import { fetchAuthDataThunk } from "../api/asyncActions";
+import { fetchAuthDataThunk } from "../../../entities/AuthForm/api/asyncActions";
 
 type TInitialState = {
   isAuth: boolean;
   fetchAuthDataState: TFetchState;
-  error: null | string;
 }
 
 const initialState: TInitialState = {
-  isAuth: false,
+  isAuth: sessionStorage.testIsAuth === 'isAuth',
   fetchAuthDataState: 'idle',
-  error: null
 };
 
 const authSlice = createSlice({
