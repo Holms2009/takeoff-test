@@ -7,3 +7,11 @@ type TAuthData = {
   email: string;
   password: string;
 }
+
+type TContactData = {
+  id: number;
+  name: string;
+  phone: string;
+  email: string;
+  avatar: string;
+}

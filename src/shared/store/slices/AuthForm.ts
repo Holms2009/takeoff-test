@@ -25,7 +25,7 @@ const authSlice = createSlice({
     builder.addCase(fetchAuthDataThunk.pending, (state) => {
       state.fetchAuthDataState = 'loading';
     });
-    builder.addCase(fetchAuthDataThunk.fulfilled, (state, action) => {
+    builder.addCase(fetchAuthDataThunk.fulfilled, (state) => {
       state.fetchAuthDataState = 'finished';
     });
     builder.addCase(fetchAuthDataThunk.rejected, (state) => {
