@@ -6,6 +6,11 @@
   background-color: $white;
   border-radius   : 15px;
 
+  @media screen and (max-width: $m1) {
+    height       : 100%;
+    border-radius: 0;
+  }
+
   &__title {
     font-size  : 50px;
     font-weight: 600;

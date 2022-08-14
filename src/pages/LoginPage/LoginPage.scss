@@ -22,5 +22,11 @@
     @media screen and (max-width: $t) {
       width: 80%;
     }
+
+    @media screen and (max-width: $m1) {
+      margin-top: 50px;
+      width     : 100%;
+      height    : 100%;
+    }
   }
 }

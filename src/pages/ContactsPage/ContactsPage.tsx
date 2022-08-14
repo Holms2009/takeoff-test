@@ -13,7 +13,7 @@ let b = block('ContactsPage');
 
 function ContactsPage() {
   let dispatch = useAppDispatch();
-  let contactsData: TContactData[] = useAppSelector(getContacts);
+  let contactsData: TContactData[] = useAppSelector(getContacts);  
 
   useEffect(() => {
     dispatch(fetchContactsThunk());

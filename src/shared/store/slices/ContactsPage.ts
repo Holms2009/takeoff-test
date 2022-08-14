@@ -35,8 +35,8 @@ const contactsPageSlice = createSlice({
   },
 });
 
-export const { setContactsData } = contactsPageSlice.actions;
 
 export const getContacts = (state: RootState) => state.contacts.contactsData;
 
+export const { setContactsData } = contactsPageSlice.actions;
 export default contactsPageSlice.reducer;

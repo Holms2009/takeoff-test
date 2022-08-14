@@ -1,5 +1,5 @@
 import block from "bem-cn";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import './ContactsList.scss';
 
@@ -19,9 +19,13 @@ function ContactsList({ data }: Props) {
   let [edit, setEdit] = useState<null | TContactData>(null);
   let [add, setAdd] = useState(false);
   let [search, setSearch] = useState('');
+  let [sortedData, setSortedData] = useState<TContactData[]>([]);
 
-  let sortedData = searchByName(data, search);
   let dispatch = useAppDispatch();
+
+  useEffect(() => {    
+    if (data.length) setSortedData(searchByName(data, search));
+  }, [search, data])
 
   function removeContact(contact: TContactData) {
     deleteContact(contact.id)
