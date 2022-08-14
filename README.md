@@ -7,7 +7,7 @@
   - SCSS;
   - bem-cn;
   - Node v14.17.1;
-  - Faker.js для mock-данных;
+  - Mock API + Faker.js для mock-данных;
 
 ### Запуск проекта:
  - Уствновить зависимости ```yarn install```;
