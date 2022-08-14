@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker';
 import './ContactEditor.scss';
 
 import { contactTemplate } from "./config/data";
-import { Button, Input } from "../../shared/ui";
+import { Button, Input } from "../../../../shared/ui";
 
 let b = block('ContactEditor');
 

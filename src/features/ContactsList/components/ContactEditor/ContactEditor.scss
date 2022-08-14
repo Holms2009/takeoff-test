@@ -1,4 +1,4 @@
-@import '../../app/styles/variables';
+@import '../../../../app/styles/variables';
 
 .ContactEditor {
   box-sizing      : border-box;
@@ -7,6 +7,10 @@
   height          : 100%;
   background-color: transparentize($dark_blue, 0.7);
   overflow-y      : scroll;
+
+  @media screen and (max-width: $m1) {
+    padding: 0;
+  }
 
   //Hide scrollbar
   &::-webkit-scrollbar {
@@ -17,10 +21,20 @@
   scrollbar-width   : none;
 
   &__form {
+    box-sizing      : border-box;
     margin          : 0 auto;
     padding         : 20px;
     background-color: $white;
     border-radius   : 10px;
+    display         : flex;
+    flex-direction  : column;
+
+    @media screen and (max-width: $m1) {
+      padding      : 0;
+      padding-bottom: 20px;
+      height       : 100%;
+      border-radius: 0;
+    }
   }
 
   &__title {
@@ -40,5 +54,10 @@
     display        : flex;
     justify-content: center;
     gap            : 20px;
+
+    @media screen and (max-width: $m1) {
+      margin-top    : auto;
+      flex-direction: column;
+    }
   }
 }

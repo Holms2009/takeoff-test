@@ -1,7 +1,6 @@
 @import '../../app/styles/variables';
 
 .ContactsList {
-  margin-top      : 30px;
   padding         : 0 20px;
   height          : 100%;
   background-color: $white;
@@ -42,6 +41,10 @@
     &:focus {
       outline   : none;
       box-shadow: inset 0 0 8px 0 transparentize($blue2, 0.8);
+    }
+
+    @media screen and (max-width: $m2) {
+      font-size: 16px;
     }
   }
 

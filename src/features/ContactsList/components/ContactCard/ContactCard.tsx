@@ -17,17 +17,14 @@ function ContactCard({ contact, removeHandler, editHandler }: Props) {
       <div className={b('contact-data')}>
         <div className={b('field')}>
           <span className={b('label')}>Name:</span>
-          &nbsp;
           <span className={b('data')}>{contact.name}</span>
         </div>
         <div className={b('field')}>
           <span className={b('label')}>Phone:</span>
-          &nbsp;
           <span className={b('data')}>{contact.phone}</span>
         </div>
         <div className={b('field')}>
           <span className={b('label')}>Email:</span>
-          &nbsp;
           <span className={b('data')}>{contact.email}</span>
         </div>
       </div>

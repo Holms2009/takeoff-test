@@ -4,9 +4,8 @@ import React, { useState } from "react";
 import './ContactsList.scss';
 
 import { deleteContact, updateContact, addContact } from "./api/requests";
-import { ContactCard } from "./components";
+import { ContactCard, ContactEditor } from "./components";
 import { newContactID, searchByName } from "./lib/utils";
-import { ContactEditor } from "../ContactEditor/ContactEditor";
 import { fetchContactsThunk } from "../../shared/api/Contacts/asyncActions";
 import { useAppDispatch } from "../../shared/store/hooks";
 
