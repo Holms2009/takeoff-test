@@ -43,9 +43,13 @@
 
     &:hover {
       .ContactsList__btn {
-        max-width: 30px;
+        max-width: 20px;
         opacity  : 1;
       }
+    }
+
+    @media screen and (max-width: $t) {
+      gap: 15px;
     }
 
     &_new {
@@ -58,7 +62,7 @@
         background     : url('../../assets/img/add.svg') no-repeat 50% 50%;
         background-size: cover;
         cursor         : pointer;
-        transition     : all 0.3s ease;        
+        transition     : all 0.3s ease;
 
         &:hover {
           transform: scale(1.1);
@@ -91,6 +95,10 @@
     &:not(:first-child) {
       margin-top: 5px;
     }
+
+    @media screen and (max-width: $t) {
+      font-size: 16px;
+    }
   }
 
   &__data {
@@ -101,6 +109,10 @@
     display       : flex;
     flex-direction: column;
     gap           : 10px;
+
+    @media screen and (max-width: $t) {
+      gap: 15px;
+    }
   }
 
   &__btn {
@@ -110,6 +122,13 @@
     height    : 20px;
     cursor    : pointer;
     transition: all 0.3s ease;
+
+    @media screen and (max-width: $t) {
+      max-width: 30px;
+      width    : 30px;
+      height   : 30px;
+      opacity  : 1;
+    }
 
 
     &_remove {
