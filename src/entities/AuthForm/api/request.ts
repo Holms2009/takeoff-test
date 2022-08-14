@@ -1,6 +1,6 @@
 import { fetchData } from "../../../shared/api";
 
 export async function fetchAuthData() {
-  let data = await fetchData('/auth');
+  let data: TAuthData[] = await fetchData('/auth');
   return data;
 }

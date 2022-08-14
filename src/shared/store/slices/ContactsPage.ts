@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { fetchAuthDataThunk } from "../../../entities/AuthForm/api/asyncActions";
+import { fetchContactsThunk } from "../../api/Contacts/asyncActions";
 
 type TInitialState = {
   contactsData: TContactData[];
@@ -16,20 +16,26 @@ const initialState: TInitialState = {
 const contactsPageSlice = createSlice({
   name: "contacts",
   initialState,
-  reducers: {},
+  reducers: {
+    setContactsData: (state, action: PayloadAction<TContactData[]>) => {
+      state.contactsData = action.payload;
+    }
+  },
   extraReducers: (builder) => {
-    builder.addCase(fetchAuthDataThunk.pending, (state) => {
+    builder.addCase(fetchContactsThunk.pending, (state) => {
       state.fetchContactsState = 'loading';
     });
-    builder.addCase(fetchAuthDataThunk.fulfilled, (state, action: PayloadAction<TContactData[]>) => {
+    builder.addCase(fetchContactsThunk.fulfilled, (state, action: PayloadAction<TContactData[]>) => {
       state.fetchContactsState = 'finished';
       state.contactsData = action.payload;
     });
-    builder.addCase(fetchAuthDataThunk.rejected, (state) => {
+    builder.addCase(fetchContactsThunk.rejected, (state) => {
       state.fetchContactsState = 'failed';
     });
   },
 });
+
+export const { setContactsData } = contactsPageSlice.actions;
 
 export const getContacts = (state: RootState) => state.contacts.contactsData;
 
