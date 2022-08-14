@@ -10,4 +10,12 @@ function newContactID(contacts: TContactData[]) {
   return maxID + 1;
 }
 
-export { newContactID };
+function searchByName(contacts: TContactData[], input: string) {
+  let searchTemplate = new RegExp(input.toLowerCase() + '.+$', 'i');
+
+  return contacts.filter((contact) => {
+    return contact.name.toLowerCase().search(searchTemplate) !== -1;
+  })
+}
+
+export { newContactID, searchByName };

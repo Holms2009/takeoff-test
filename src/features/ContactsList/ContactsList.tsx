@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import './ContactsList.scss';
 
 import { deleteContact, updateContact, addContact } from "./api/requests";
+import { newContactID, searchByName } from "./lib/utils";
 import { ContactEditor } from "../ContactEditor/ContactEditor";
 import { fetchContactsThunk } from "../../shared/api/Contacts/asyncActions";
 import { useAppDispatch } from "../../shared/store/hooks";
-import { newContactID } from "./lib/utils";
 
 let b = block('ContactsList');
 
@@ -18,7 +18,9 @@ type Props = {
 function ContactsList({ data }: Props) {
   let [edit, setEdit] = useState<null | TContactData>(null);
   let [add, setAdd] = useState(false);
+  let [search, setSearch] = useState('');
 
+  let sortedData = searchByName(data, search);
   let dispatch = useAppDispatch();
 
   function removeContact(contact: TContactData) {
@@ -47,7 +49,13 @@ function ContactsList({ data }: Props) {
   return (
     <div className={b()}>
       <div className={b('wrapper', { 'no-scroll': edit !== null })}>
-        {data.map((contact) => (
+        <input
+          className={b('search')}
+          value={search}
+          onInput={(evt) => setSearch(evt.currentTarget.value)}
+          placeholder="Search for contact name"
+        />
+        {sortedData.map((contact) => (
           <div className={b('contact')} key={contact.id}>
             <img className={b('avatar')} src={contact.avatar} alt="Contact avatar" />
             <div className={b('contact-data')}>
